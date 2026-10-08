@@ -1,0 +1,66 @@
+{
+  "chips": [
+    {
+      "kind": "caution",
+      "label": "DRAFT"
+    },
+    {
+      "kind": "caution",
+      "label": "UNSIGNED"
+    }
+  ],
+  "compare_id": null,
+  "deltas": [],
+  "headline": "3 of 4 gates need review (worst: drift_final at 0.4063).",
+  "model_hash": "sha256:1212121212121212121212121212121212121212121212121212121212121212",
+  "odd": "golden fixture envelope for drifty, seed 12",
+  "offline_verify": {
+    "command": "python backend/par_cli.py <par.json>",
+    "hash": "6d7a307b961265598173321b609f6cf1267518a850770b153f6de8757ef4f41c"
+  },
+  "profile_version": "draft-0",
+  "reasons": [
+    {
+      "band": "amber",
+      "evidence_ref": "golden:drift_mean",
+      "gate": "drift_mean",
+      "plain_text": "drift_mean measured 0.3077, in the review band (0.15-0.5)."
+    },
+    {
+      "band": "amber",
+      "evidence_ref": "golden:drift_final",
+      "gate": "drift_final",
+      "plain_text": "drift_final measured 0.4063, in the review band (0.2-0.6)."
+    },
+    {
+      "band": "amber",
+      "evidence_ref": "golden:frechet_gap",
+      "gate": "frechet_gap",
+      "plain_text": "frechet_gap measured 0.5159, in the review band (0.3-0.8)."
+    },
+    {
+      "band": "green",
+      "evidence_ref": "golden:coherence_ratio",
+      "gate": "coherence",
+      "plain_text": "coherence measured 1, inside green (at or above 0.8)."
+    }
+  ],
+  "run_id": "run_vm_drifty",
+  "scope": "Scoped to model sha256:121212121212... in: golden fixture envelope for drifty, seed 12",
+  "verdict": "REVIEW",
+  "verdict_plain": "Review before shipping: 3 gate(s) need review (drift_final, drift_mean, frechet_gap).",
+  "what_would_change": [
+    {
+      "gate": "drift_mean",
+      "move": "reduce drift_mean from 0.3077 to below 0.15 for green (delta 0.1577)."
+    },
+    {
+      "gate": "drift_final",
+      "move": "reduce drift_final from 0.4063 to below 0.2 for green (delta 0.2063)."
+    },
+    {
+      "gate": "frechet_gap",
+      "move": "reduce frechet_gap from 0.5159 to below 0.3 for green (delta 0.2159)."
+    }
+  ]
+}

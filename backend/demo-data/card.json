@@ -1,0 +1,26 @@
+{
+ "T": 472,
+ "description": "DROID raw success episode, Franka FR3, pour task",
+ "generator": "tools/convert_droid_ep.py v1",
+ "id": "droid_pour_s1",
+ "lab": "AUTOLab",
+ "license": "DROID raw, see https://github.com/droid-dataset/droid",
+ "mapping": {
+  "dropped": "z, orientation, gripper, torques (format is [x,y])",
+  "real": "action/robot_state/cartesian_position[:, 0:2]",
+  "sim": "action/target_cartesian_position[:, 0:2]"
+ },
+ "metadata_source": "https://storage.googleapis.com/gresearch/robotics/droid_raw/1.0.1/AUTOLab/success/2023-07-07/Fri_Jul__7_09:42:23_2023/metadata_AUTOLab+5d05c5aa+2023-07-07-09h-42m-23s.json",
+ "robot": "fr3-295341-1326595",
+ "scenario": "droid_pour (public real capture)",
+ "seed": 0,
+ "seed_note": "seeds do not apply to real captures",
+ "source": "https://storage.googleapis.com/gresearch/robotics/droid_raw/1.0.1/AUTOLab/success/2023-07-07/Fri_Jul__7_09:42:23_2023/trajectory.h5",
+ "success": true,
+ "task": "Use cup to pour something granular (ex: nuts, rice, dried pasta, coffee beans)",
+ "transforms": [
+  "rounded to 4 decimals",
+  "no smoothing",
+  "no resample"
+ ]
+}

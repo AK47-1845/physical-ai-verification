@@ -1,0 +1,53 @@
+{
+  "chips": [
+    {
+      "kind": "caution",
+      "label": "DRAFT"
+    },
+    {
+      "kind": "caution",
+      "label": "UNSIGNED"
+    }
+  ],
+  "compare_id": null,
+  "deltas": [],
+  "headline": "All 4 gates passed.",
+  "model_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "odd": "golden fixture envelope for clean, seed 11",
+  "offline_verify": {
+    "command": "python backend/par_cli.py <par.json>",
+    "hash": "008f7e87c17dabb299db125ba396077774ee7242005065660d917322bec000c9"
+  },
+  "profile_version": "draft-0",
+  "reasons": [
+    {
+      "band": "green",
+      "evidence_ref": "golden:drift_mean",
+      "gate": "drift_mean",
+      "plain_text": "drift_mean measured 0.03673, inside green (at or below 0.15)."
+    },
+    {
+      "band": "green",
+      "evidence_ref": "golden:drift_final",
+      "gate": "drift_final",
+      "plain_text": "drift_final measured 0.05054, inside green (at or below 0.2)."
+    },
+    {
+      "band": "green",
+      "evidence_ref": "golden:frechet_gap",
+      "gate": "frechet_gap",
+      "plain_text": "frechet_gap measured 0.09902, inside green (at or below 0.3)."
+    },
+    {
+      "band": "green",
+      "evidence_ref": "golden:coherence_ratio",
+      "gate": "coherence",
+      "plain_text": "coherence measured 1, inside green (at or above 0.8)."
+    }
+  ],
+  "run_id": "run_vm_clean",
+  "scope": "Scoped to model sha256:111111111111... in: golden fixture envelope for clean, seed 11",
+  "verdict": "TRUSTED",
+  "verdict_plain": "Passed these checks: all gates green.",
+  "what_would_change": []
+}

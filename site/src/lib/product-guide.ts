@@ -1,0 +1,27 @@
+export type ProductReply = { text: string; source: 'guide' | 'fallback' };
+
+const ENTRIES = [
+  { keys: ['price', 'pricing', 'cost', 'pilot', 'contact', 'email', 'paid'], answer: 'No public pilot price or delivery promise is published. The pilot control downloads a local brief unless intake is explicitly configured. A stored request is not an email receipt. Source: /privacy and /use-cases.' },
+  { keys: ['certif', 'safe', 'ce ', 'legal', 'compliance', 'law', 'regulation'], answer: 'The product provides scoped screening evidence, not a legal conclusion or whole-system safety finding. The applicability worksheet records inputs and an implied route; human and legal review remain required. Source: /compliance.' },
+  { keys: ['customer', 'revenue', 'traction', 'funding', 'patent', 'valuation', 'investor'], answer: 'This guide has no verified customer, revenue, funding or patent record to disclose. Demonstration results are not commercial traction. Source: the public product limits on /evidence and /privacy.' },
+  { keys: ['free', 'key', 'account', 'magic', 'retain', 'privacy', 'share', 'consent'], answer: 'Free Lab offers anonymous trace screening with 512-sample and 256 KB limits. Sharing a result, joining the board and retaining benchmark traces are separate choices. Keys are expiring anonymous demo keys, not verified email accounts. Source: /free, /privacy and /contribute.' },
+  { keys: ['hunt', 'challenge', 'seed', 'leaderboard', 'board', 'duel'], answer: 'The weekly challenge uses a private fixture seed with a published commitment and at most 50 attempts per demo key. Reveal is refused until the week closes. The board labels synthetic examples; keys do not establish unique human identities. Source: /free.' },
+  { keys: ['par', 'signature', 'hash', 'ledger', 'dossier', 'integrity', 'tamper'], answer: 'A Policy Assurance Record carries measurements, scope and declared relationships. The offline reader checks structure and hashes. PARs remain UNSIGNED; a hash is not an author signature. Ledger truncation checks need a retained external anchor. Source: /evidence.' },
+  { keys: ['fm3', 'fm4', 'model callable', 'hallucination', 'action sensitivity'], answer: 'Custom reconstruction and action-sensitivity probes require model callables through the library. HTTP examples use explicitly synthetic toy callables. A trace alone does not establish those model properties. Source: /methodology and /free.' },
+  { keys: ['transfer', 'embodiment', 'joint', 'frame', 'units'], answer: 'Transfer checks require declared compatible task-space frames and units. Cross-embodiment joint-space comparisons are refused. A low path gap does not establish robot-wide transfer. Source: /playground?flow=transfer.' },
+  { keys: ['release', 'compare', 'ota', 'update'], answer: 'The workspace compares stored runs and displays per-gate deltas. Single-trace comparisons do not supply an independent-rollout confidence interval. Modification flags support human review; they do not decide legal applicability. Source: /release and /playground?flow=compare.' },
+  { keys: ['bounded', 'proof', 'unknown', 'guard'], answer: 'Bounded checks cover the returned toy model, input domain, assumptions and method. UNKNOWN is not a pass. The supervisory guard is a Python reference and does not actuate hardware. Source: /playground?flow=bounded.' },
+  { keys: ['score', 'threshold', 'calibrat', 'gate', 'draft', 'verify', 'robot'], answer: 'The trace scorer measures mean and final tracking error, discrete Frechet path gap and coherent horizon under draft-0. Thresholds remain DRAFT. A blocked gate cannot be offset by other passing gates, and missing evidence is never shown as a pass. Source: /playground and /methodology.' },
+  { keys: ['demo', 'video', 'offline', 'live'], answer: 'The /demo walkthrough runs for 90 seconds. It uses real engine responses on synthetic inputs when available and a labeled recorded synthetic capsule otherwise. It does not show hardware execution. Source: /demo.' },
+  { keys: ['capsule', 'replay', 'seal'], answer: 'The workspace seals any live result as a replay capsule: the request, the returned envelope and its live mode under one track hash. POST the file to eval/capsule/verify to recompute the hash; edits fail closed. The hash proves integrity, not authorship: capsules are UNSIGNED. Source: /playground Seal capsule button.' },
+  { keys: ['hello', 'hi', 'help', 'about', 'what is verification'], answer: 'An evidence-first physical-AI screening and governance product. Start with /playground for guided work, /free for trace experiments, or /demo for the captioned walkthrough.' },
+] as const;
+
+export function productAnswer(question: string): ProductReply {
+  const normalized = question.trim().slice(0, 500).toLowerCase();
+  if (/ignore.{0,30}(instruction|rule)|system prompt|api.?secret|password|private key|make up|invent|pretend/.test(normalized)) {
+    return { source: 'guide', text: 'I can explain the published product and its limits, but cannot provide secrets, invent evidence or override the honesty rules. Source: /privacy and /evidence.' };
+  }
+  for (const entry of ENTRIES) if (entry.keys.some(key => normalized.includes(key))) return { source: 'guide', text: entry.answer };
+  return { source: 'fallback', text: 'That is outside the curated product guide. No external model was contacted. The current scope, privacy choices and technical limits are published at /methodology, /privacy and /evidence.' };
+}

@@ -1,0 +1,556 @@
+{
+  "schema": "verification.synthetic-replay/1",
+  "captured_at": "2026-10-05T07:08:40.275Z",
+  "qualification": "RECORDED SYNTHETIC demonstration. Real engine responses on fixture inputs, not hardware evidence. DRAFT thresholds. UNSIGNED PAR.",
+  "track_sha256": "eca1cbd385443b9d6b32fffb51ea6d247a7a15a496f7302d25ec2b9efc7048e9",
+  "calls": [
+    {
+      "route": "runs/evaluate",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "runs/evaluate",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "eval/hunt",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "dossiers/compile",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "par/validate",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "route": "ledger/verify",
+      "method": "POST",
+      "status": 200
+    }
+  ],
+  "track": {
+    "clean": {
+      "run_id": "run_6b90b74d2661",
+      "verdict": "TRUSTED",
+      "scorecard": {
+        "payload": {
+          "gates": [
+            {
+              "gate": "drift_mean",
+              "measurement": 0.08333333333333333,
+              "band": "green",
+              "status": "PASS",
+              "evidence": "ev://runs/:drift_mean"
+            },
+            {
+              "gate": "drift_final",
+              "measurement": 0.1,
+              "band": "green",
+              "status": "PASS",
+              "evidence": "ev://runs/:drift_final"
+            },
+            {
+              "gate": "frechet_gap",
+              "measurement": 0.2,
+              "band": "green",
+              "status": "PASS",
+              "evidence": "ev://runs/:frechet_gap"
+            },
+            {
+              "gate": "coherence",
+              "measurement": 1,
+              "band": "green",
+              "status": "PASS",
+              "evidence": "ev://runs/:coherence_ratio"
+            }
+          ],
+          "verdict": "TRUSTED",
+          "band": "green",
+          "reasons": [
+            "all gates PASS"
+          ],
+          "seed": 7
+        },
+        "inputs_hash": "defccf68c3dabb79f28df9efd3145dbb740dfbe4dc79edb82c480f6be000aeb7",
+        "profile_version": "draft-0",
+        "code_version": "0.1.0",
+        "envelope_hash": "5aec4764b31acb1fa41f8c3676a9e3a09610b82ad667c96ff02b08c2a873e71d"
+      }
+    },
+    "drifty": {
+      "run_id": "run_4d0fa3772fff",
+      "verdict": "BLOCKED",
+      "scorecard": {
+        "payload": {
+          "gates": [
+            {
+              "gate": "drift_mean",
+              "measurement": 1.0833333333333333,
+              "band": "red",
+              "status": "BLOCKED",
+              "evidence": "ev://runs/:drift_mean"
+            },
+            {
+              "gate": "drift_final",
+              "measurement": 2.5,
+              "band": "red",
+              "status": "BLOCKED",
+              "evidence": "ev://runs/:drift_final"
+            },
+            {
+              "gate": "frechet_gap",
+              "measurement": 2.5,
+              "band": "red",
+              "status": "BLOCKED",
+              "evidence": "ev://runs/:frechet_gap"
+            },
+            {
+              "gate": "coherence",
+              "measurement": 0.3333333333333333,
+              "band": "red",
+              "status": "BLOCKED",
+              "evidence": "ev://runs/:coherence_ratio"
+            }
+          ],
+          "verdict": "BLOCKED",
+          "band": "red",
+          "reasons": [
+            "drift_mean=BLOCKED",
+            "drift_final=BLOCKED",
+            "frechet_gap=BLOCKED",
+            "coherence=BLOCKED"
+          ],
+          "seed": 7
+        },
+        "inputs_hash": "8f619ef870189a411f69c7cb5722579f2bc89c0489940ef45f758e763828e37a",
+        "profile_version": "draft-0",
+        "code_version": "0.1.0",
+        "envelope_hash": "a6fead342a83cdea3a982416129e8191a5beed387e5a8de1418f69bb4f052065"
+      }
+    },
+    "hunt": {
+      "mode": "random",
+      "seed": 1,
+      "trial_cap": 16,
+      "exhausted": true,
+      "trials": [
+        {
+          "trial": 0,
+          "params": {
+            "bias": 0.13436424411240122,
+            "noise_scale": 1.771150605405849
+          },
+          "breaks": false,
+          "measurement": 0.23105626628905915
+        },
+        {
+          "trial": 1,
+          "params": {
+            "bias": 0.763774618976614,
+            "noise_scale": 0.8826035386091325
+          },
+          "breaks": true,
+          "measurement": 0.9130570440953445
+        },
+        {
+          "trial": 2,
+          "params": {
+            "bias": 0.49543508709194095,
+            "noise_scale": 1.1742365971831072
+          },
+          "breaks": true,
+          "measurement": 0.6139974172694461
+        },
+        {
+          "trial": 3,
+          "params": {
+            "bias": 0.651592972722763,
+            "noise_scale": 1.6830850267032698
+          },
+          "breaks": true,
+          "measurement": 0.8127189783528901
+        },
+        {
+          "trial": 4,
+          "params": {
+            "bias": 0.0938595867742349,
+            "noise_scale": 0.5425212147830094
+          },
+          "breaks": false,
+          "measurement": 0.1291304236402497
+        },
+        {
+          "trial": 5,
+          "params": {
+            "bias": 0.8357651039198697,
+            "noise_scale": 1.1491506018575801
+          },
+          "breaks": true,
+          "measurement": 1.0055635920432444
+        },
+        {
+          "trial": 6,
+          "params": {
+            "bias": 0.762280082457942,
+            "noise_scale": 0.5031590800266661
+          },
+          "breaks": true,
+          "measurement": 0.8982662543961363
+        },
+        {
+          "trial": 7,
+          "params": {
+            "bias": 0.4453871940548014,
+            "noise_scale": 1.5823100485111739
+          },
+          "breaks": true,
+          "measurement": 0.5721305244254258
+        },
+        {
+          "trial": 8,
+          "params": {
+            "bias": 0.22876222127045265,
+            "noise_scale": 1.9179060433308834
+          },
+          "breaks": false,
+          "measurement": 0.34099879684277445
+        },
+        {
+          "trial": 9,
+          "params": {
+            "bias": 0.9014274576114836,
+            "noise_scale": 0.5458849745503302
+          },
+          "breaks": true,
+          "measurement": 1.0605734795575241
+        },
+        {
+          "trial": 10,
+          "params": {
+            "bias": 0.0254458609934608,
+            "noise_scale": 1.3121187091902449
+          },
+          "breaks": false,
+          "measurement": 0.09801946224630306
+        },
+        {
+          "trial": 11,
+          "params": {
+            "bias": 0.9391491627785106,
+            "noise_scale": 1.0718063565323186
+          },
+          "breaks": true,
+          "measurement": 1.1222392699569161
+        },
+        {
+          "trial": 12,
+          "params": {
+            "bias": 0.21659939713061338,
+            "noise_scale": 1.133174863374076
+          },
+          "breaks": false,
+          "measurement": 0.2929857512541954
+        },
+        {
+          "trial": 13,
+          "params": {
+            "bias": 0.029040787574867943,
+            "noise_scale": 0.8325374994095526
+          },
+          "breaks": false,
+          "measurement": 0.07385228930015279
+        },
+        {
+          "trial": 14,
+          "params": {
+            "bias": 0.43788759365057206,
+            "noise_scale": 1.243718362072776
+          },
+          "breaks": true,
+          "measurement": 0.5504319559323761
+        },
+        {
+          "trial": 15,
+          "params": {
+            "bias": 0.23308445025757263,
+            "noise_scale": 0.8462998123114764
+          },
+          "breaks": false,
+          "measurement": 0.30012996023531874
+        }
+      ],
+      "breaks": [
+        {
+          "trial": 1,
+          "params": {
+            "bias": 0.763774618976614,
+            "noise_scale": 0.8826035386091325
+          },
+          "breaks": true,
+          "measurement": 0.9130570440953445
+        },
+        {
+          "trial": 2,
+          "params": {
+            "bias": 0.49543508709194095,
+            "noise_scale": 1.1742365971831072
+          },
+          "breaks": true,
+          "measurement": 0.6139974172694461
+        },
+        {
+          "trial": 3,
+          "params": {
+            "bias": 0.651592972722763,
+            "noise_scale": 1.6830850267032698
+          },
+          "breaks": true,
+          "measurement": 0.8127189783528901
+        },
+        {
+          "trial": 5,
+          "params": {
+            "bias": 0.8357651039198697,
+            "noise_scale": 1.1491506018575801
+          },
+          "breaks": true,
+          "measurement": 1.0055635920432444
+        },
+        {
+          "trial": 6,
+          "params": {
+            "bias": 0.762280082457942,
+            "noise_scale": 0.5031590800266661
+          },
+          "breaks": true,
+          "measurement": 0.8982662543961363
+        },
+        {
+          "trial": 7,
+          "params": {
+            "bias": 0.4453871940548014,
+            "noise_scale": 1.5823100485111739
+          },
+          "breaks": true,
+          "measurement": 0.5721305244254258
+        },
+        {
+          "trial": 9,
+          "params": {
+            "bias": 0.9014274576114836,
+            "noise_scale": 0.5458849745503302
+          },
+          "breaks": true,
+          "measurement": 1.0605734795575241
+        },
+        {
+          "trial": 11,
+          "params": {
+            "bias": 0.9391491627785106,
+            "noise_scale": 1.0718063565323186
+          },
+          "breaks": true,
+          "measurement": 1.1222392699569161
+        },
+        {
+          "trial": 14,
+          "params": {
+            "bias": 0.43788759365057206,
+            "noise_scale": 1.243718362072776
+          },
+          "breaks": true,
+          "measurement": 0.5504319559323761
+        }
+      ]
+    },
+    "dossier": {
+      "dossier_id": "dos_81febeb6e5a4",
+      "par": {
+        "par": {
+          "par_version": "0.1",
+          "policy": {
+            "id": "demo-drifty-v1",
+            "weights": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "release": {
+            "parent": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "delta": "UNASSESSED"
+          },
+          "gates": [
+            {
+              "id": "drift_mean",
+              "verdict": "BLOCKED",
+              "measurement": 1.0833333333333333,
+              "evidence": "ev://runs/:drift_mean"
+            },
+            {
+              "id": "drift_final",
+              "verdict": "BLOCKED",
+              "measurement": 2.5,
+              "evidence": "ev://runs/:drift_final"
+            },
+            {
+              "id": "frechet_gap",
+              "verdict": "BLOCKED",
+              "measurement": 2.5,
+              "evidence": "ev://runs/:frechet_gap"
+            },
+            {
+              "id": "coherence",
+              "verdict": "BLOCKED",
+              "measurement": 0.3333333333333333,
+              "evidence": "ev://runs/:coherence_ratio"
+            }
+          ],
+          "ledger_head": "412ed878da5dc48b7e543724433f1444aa38583feefd8db3309796fed8681688",
+          "odd": "SYNTHETIC 2D reacher, world frame, no hardware execution",
+          "independence": {
+            "builder": "Synthetic fixture",
+            "funder": "Internal demonstration",
+            "relationship": "No external assessment"
+          }
+        },
+        "par_hash": "7411ebe85cae7673ded9cead7d2751f2bc5f2001de9a6b238e543a770028fd85"
+      },
+      "ledger_index": 4
+    },
+    "verification": {
+      "ok": true,
+      "gates": 4,
+      "blocked": 4
+    },
+    "ledger": {
+      "ok": true,
+      "entries": 5
+    },
+    "inputs": {
+      "clean": {
+        "id": "clean",
+        "name": "Nominal reach",
+        "detail": "Small tracking error",
+        "intended": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "observed": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.1
+          ],
+          [
+            2,
+            -0.1
+          ],
+          [
+            3,
+            0.2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0.1
+          ]
+        ],
+        "units": "m",
+        "frame_id": "world",
+        "label": "SYNTHETIC"
+      },
+      "drifty": {
+        "id": "drifty",
+        "name": "Drifting reach",
+        "detail": "Accumulating deviation",
+        "intended": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "observed": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.3
+          ],
+          [
+            2,
+            0.7
+          ],
+          [
+            3,
+            1.2
+          ],
+          [
+            4,
+            1.8
+          ],
+          [
+            5,
+            2.5
+          ]
+        ],
+        "units": "m",
+        "frame_id": "world",
+        "label": "SYNTHETIC"
+      }
+    }
+  }
+}

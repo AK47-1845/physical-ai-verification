@@ -1,0 +1,38 @@
+{
+  "engine_version": "0.1.0",
+  "stories": {
+    "clean": {
+      "card": "020c8d47f5b14c205ccd492a19a884439e6dc2559794e251625d674816e4dc0d",
+      "catalogue": "42e8c28f92d88444c60461c0ba199ed0c41ae8ab6265c73b379cc7e4392dc437",
+      "ledger_head": "e37cc0a267c5e150c809f87eae650dc4c7226a35c2aeaee97ff901b91e288565",
+      "par": "008f7e87c17dabb299db125ba396077774ee7242005065660d917322bec000c9",
+      "scorecard_envelope": "a6478988c52c38589bbf0dfcf7d1971065927ec9969855f6bae71fed898664b3",
+      "verdict": "TRUSTED"
+    },
+    "drifty": {
+      "card": "211e8a4533b6ca187f49be519d8c79911a3af13b832c2e8144d6e2b2fc00d5f4",
+      "catalogue": "60ff60c19e87031e97ba625417f15b0d22e248b4a9bffcd908bd103eb5337dc9",
+      "ledger_head": "b04035ef6c017d40dc28128cb89c72f9a5027e14b6dcad8cc0aa3f05970bd3d9",
+      "par": "6d7a307b961265598173321b609f6cf1267518a850770b153f6de8757ef4f41c",
+      "scorecard_envelope": "8c696f2dd1c1d0badbcb9bba6ccdacf8703fa896a4fc5e11d68e39d2c0b7d7d6",
+      "verdict": "REVIEW"
+    },
+    "playback": {
+      "card": "58122ffba7de47eff5c2fba47e93dee19dd59051d69033b7b9768ceb68cecd94",
+      "catalogue": "ff1b029a13724b407abc7eff8d33d2da43ab292b1262e60e42c9eef6e0f3c2e0",
+      "ledger_head": "dabb5f1870070187659c9ee17dff6606b81b7012d5e52ae1fe0d048e8dd8ae41",
+      "par": "2af7b0990da64c2c08296a50976dd792da501e202199daab0ec4bf03afc8e771",
+      "scorecard_envelope": "4aaadd6ab3072d40c2a637c310d1dd06c6965d017b916f607689cd3d6b3e804b",
+      "verdict": "BLOCKED"
+    },
+    "synthfed": {
+      "card": "3771eba137b8aecfcc57cdc8a8de709b679772f9a0ecc536b6c3be582748c2dc",
+      "catalogue": "ec303d78452eb9aa2e442686868c1491f8bd70ff33688a723ed5701caa871d5f",
+      "ledger_head": "7c55bff271e7e2dae1857879d1b1b5652f128c4a26a83db97abf8824327ac681",
+      "par": "32c741f99261bea67c7b951ecf6296c8554356879e53bf96cdca3786a177cee5",
+      "scorecard_envelope": "9a0725aedef7207ec200c1b4692f6db3384f69a1a4ed2fd0b58a44781db4309f",
+      "verdict": "REVIEW"
+    }
+  },
+  "version": 1
+}

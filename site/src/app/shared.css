@@ -1,0 +1,49 @@
+.shared-artifact{max-width:760px;margin:auto;padding:56px 32px 72px}
+.shared-artifact-head{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:26px}
+.shared-artifact-head>svg{color:var(--signal);stroke-width:1.3;display:block;margin-bottom:20px}
+.shared-artifact-head h1{font-size:36px;line-height:1.14;font-weight:500;letter-spacing:-.015em;max-width:18ch}
+.shared-artifact-head p{font-size:14px;color:var(--muted);margin-top:14px;max-width:52ch}
+.shared-artifact-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.shared-loading{padding:48px 0;font-size:13px;color:var(--muted)}
+.shared-verdict{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:22px 20px;border:1px solid var(--line);border-bottom:0;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#151e1f,#0e1415)}
+.shared-verdict h2{font-size:23px;font-weight:460;letter-spacing:-.01em;line-height:1.2;min-width:0;overflow-wrap:anywhere}
+.shared-artifact .gate-inspector{border:1px solid var(--line);border-radius:0 0 6px 6px;overflow:hidden;background:#0c1112}
+.shared-duel{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.shared-duel>section{min-width:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#0c1112}
+.shared-duel h2{font-size:13px;font-weight:500;padding:16px 18px 0}
+.shared-duel>section>.verdict-badge{margin:12px 18px 0}
+.shared-duel .gate-inspector{border:0;border-radius:0}
+.shared-hash{margin-top:26px;padding:18px 20px;border:1px solid var(--line);border-radius:5px;background:#0b1112}
+.shared-hash>.mono{display:block;font-size:8px;color:var(--muted);margin-bottom:10px}
+.shared-hash code{display:block;font-family:var(--font-geist-mono),monospace;font-size:11px;line-height:1.8;color:var(--signal);overflow-wrap:anywhere}
+.shared-hash>span:last-child{display:block;font-size:10px;color:var(--muted);margin-top:11px}
+.shared-artifact>.toolbar-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.shared-artifact>.instrument-footnote{margin-top:22px}
+.shared-artifact>.button.primary{margin-top:34px}
+.legal-page{max-width:760px;padding:56px 0 76px}
+.legal-page h1{font-size:38px;line-height:1.12;font-weight:500;letter-spacing:-.016em}
+.legal-lead{font-size:14px;color:var(--muted);margin-top:16px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.legal-page section{padding:26px 0;border-bottom:1px solid var(--line)}
+.legal-page h2{font-size:17px;font-weight:500;margin-bottom:14px}
+.legal-page p{font-size:14px;line-height:1.75;color:#b9c7bd;max-width:68ch}
+.legal-page p+p{margin-top:13px}
+.legal-page>.button{margin-top:30px}
+@media(max-width:767px){
+.shared-artifact{padding:34px 18px 52px}
+.shared-artifact-head h1{font-size:28px}
+.shared-artifact-head p{font-size:13px}
+.shared-verdict{padding:17px 15px;gap:12px}
+.shared-verdict h2{font-size:19px}
+.shared-duel{grid-template-columns:1fr}
+.shared-hash code{font-size:10px}
+.legal-page{padding:34px 0 52px}
+.legal-page h1{font-size:29px}
+.legal-page p{font-size:13px}
+}
+@media print{
+.shared-artifact{padding:0;max-width:none}
+.shared-artifact>.toolbar-actions,.shared-artifact>.button{display:none!important}
+.shared-verdict,.shared-artifact .gate-inspector,.shared-hash{background:#fff!important;color:#142124!important;border-color:#bbc5bf}
+.shared-artifact-head h1,.shared-verdict h2{color:#142124!important}
+.shared-hash code{color:#14484a!important}
+}

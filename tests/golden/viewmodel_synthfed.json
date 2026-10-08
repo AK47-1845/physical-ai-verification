@@ -1,0 +1,58 @@
+{
+  "chips": [
+    {
+      "kind": "caution",
+      "label": "DRAFT"
+    },
+    {
+      "kind": "caution",
+      "label": "UNSIGNED"
+    }
+  ],
+  "compare_id": null,
+  "deltas": [],
+  "headline": "1 of 4 gates need review (worst: frechet_gap at 0.4579).",
+  "model_hash": "sha256:1414141414141414141414141414141414141414141414141414141414141414",
+  "odd": "golden fixture envelope for synthfed, seed 14",
+  "offline_verify": {
+    "command": "python backend/par_cli.py <par.json>",
+    "hash": "32c741f99261bea67c7b951ecf6296c8554356879e53bf96cdca3786a177cee5"
+  },
+  "profile_version": "draft-0",
+  "reasons": [
+    {
+      "band": "green",
+      "evidence_ref": "golden:drift_mean",
+      "gate": "drift_mean",
+      "plain_text": "drift_mean measured 0.1381, inside green (at or below 0.15)."
+    },
+    {
+      "band": "green",
+      "evidence_ref": "golden:drift_final",
+      "gate": "drift_final",
+      "plain_text": "drift_final measured 0.1561, inside green (at or below 0.2)."
+    },
+    {
+      "band": "amber",
+      "evidence_ref": "golden:frechet_gap",
+      "gate": "frechet_gap",
+      "plain_text": "frechet_gap measured 0.4579, in the review band (0.3-0.8)."
+    },
+    {
+      "band": "green",
+      "evidence_ref": "golden:coherence_ratio",
+      "gate": "coherence",
+      "plain_text": "coherence measured 1, inside green (at or above 0.8)."
+    }
+  ],
+  "run_id": "run_vm_synthfed",
+  "scope": "Scoped to model sha256:141414141414... in: golden fixture envelope for synthfed, seed 14",
+  "verdict": "REVIEW",
+  "verdict_plain": "Review before shipping: 1 gate(s) need review (frechet_gap).",
+  "what_would_change": [
+    {
+      "gate": "frechet_gap",
+      "move": "reduce frechet_gap from 0.4579 to below 0.3 for green (delta 0.1579)."
+    }
+  ]
+}

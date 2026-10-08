@@ -1,0 +1,15 @@
+# Service-only deps. Install on the machine that runs backend/api.py:
+#   pip install -r backend/requirements-service.txt
+# Engine (packages/engine) + provenance + eval stay STDLIB-ONLY and never
+# need this file. Versions are floors, verified Oct 2026 or pinned by mirror.
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2.0
+sqlalchemy>=2.0
+argon2-cffi>=23.0
+numpy>=1.26
+scipy>=1.12
+pymongo>=4.8
+z3-solver>=4.12  # mirror backend/formal.py imports z3 at top level;
+                # api.py imports formal at top level, so the server
+                # does not start without it (caught statically, 115)

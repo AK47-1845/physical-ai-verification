@@ -1,0 +1,1 @@
+{"metrics":{"avg_reward":0.62,"max_reward":1.0,"successes":[true,true,false,true,true,false,true,true,false,false],"video_paths":[]},"n_episodes":10,"n_success":6,"pc_success":60.0,"pc_success_ci95":[31.267376973365828,83.18196702937637],"task_group":"libero_goal","task_id":3}

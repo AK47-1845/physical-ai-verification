@@ -1,0 +1,11 @@
+.next
+.next-bak
+.next-astra
+.next-astra-bak
+.next-transfer
+.next-transfer-bak
+.backups
+test-results
+src/app-api-bak
+*.log
+.vercel

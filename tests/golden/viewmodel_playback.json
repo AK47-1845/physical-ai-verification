@@ -1,0 +1,70 @@
+{
+  "chips": [
+    {
+      "kind": "caution",
+      "label": "DRAFT"
+    },
+    {
+      "kind": "caution",
+      "label": "UNSIGNED"
+    }
+  ],
+  "compare_id": null,
+  "deltas": [],
+  "headline": "4 of 4 gates blocked (worst: coherence at 0 vs amber 0.8).",
+  "model_hash": "sha256:1313131313131313131313131313131313131313131313131313131313131313",
+  "odd": "golden fixture envelope for playback, seed 13",
+  "offline_verify": {
+    "command": "python backend/par_cli.py <par.json>",
+    "hash": "2af7b0990da64c2c08296a50976dd792da501e202199daab0ec4bf03afc8e771"
+  },
+  "profile_version": "draft-0",
+  "reasons": [
+    {
+      "band": "red",
+      "evidence_ref": "golden:drift_mean",
+      "gate": "drift_mean",
+      "plain_text": "drift_mean measured 1.123, outside amber (must be at or below 0.5)."
+    },
+    {
+      "band": "red",
+      "evidence_ref": "golden:drift_final",
+      "gate": "drift_final",
+      "plain_text": "drift_final measured 1.414, outside amber (must be at or below 0.6)."
+    },
+    {
+      "band": "red",
+      "evidence_ref": "golden:frechet_gap",
+      "gate": "frechet_gap",
+      "plain_text": "frechet_gap measured 1.414, outside amber (must be at or below 0.8)."
+    },
+    {
+      "band": "red",
+      "evidence_ref": "golden:coherence_ratio",
+      "gate": "coherence",
+      "plain_text": "coherence measured 0, outside amber (must be at or above 0.5)."
+    }
+  ],
+  "run_id": "run_vm_playback",
+  "scope": "Scoped to model sha256:131313131313... in: golden fixture envelope for playback, seed 13",
+  "verdict": "BLOCKED",
+  "verdict_plain": "Do not ship: 4 gate(s) blocked (coherence, drift_final, drift_mean, frechet_gap).",
+  "what_would_change": [
+    {
+      "gate": "drift_mean",
+      "move": "reduce drift_mean from 1.123 to below 0.5 (delta 0.6232)."
+    },
+    {
+      "gate": "drift_final",
+      "move": "reduce drift_final from 1.414 to below 0.6 (delta 0.8142)."
+    },
+    {
+      "gate": "frechet_gap",
+      "move": "reduce frechet_gap from 1.414 to below 0.8 (delta 0.6142)."
+    },
+    {
+      "gate": "coherence",
+      "move": "raise coherence from 0 to above 0.5 (delta 0.5)."
+    }
+  ]
+}
