@@ -50,3 +50,7 @@ cd site && npx tsc --noEmit && node --test tests/host.test.mjs
 ## Honesty labels
 
 Everything user-facing is labeled `DRAFT`, `SYNTHETIC`, or `UNSIGNED` where true. The public ledger is ephemeral (resets on backend restart) and the site discloses this. No customer, revenue, or benchmark claim exists in this repo beyond what the test suite proves.
+
+## Sister project
+
+[blind-panel](https://github.com/AK47-1845/blind-panel) — held-out test panels + hash-chained evidence packs with offline verification: the eval-integrity companion to this engine.
